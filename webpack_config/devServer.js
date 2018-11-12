@@ -80,7 +80,7 @@ if (process.env.HTTPS) {
   }
 
   const httpsApp = https.createServer(creds, app);
-  httpsApp.listen(port);
+  httpsApp.listen(port, '0.0.0.0');
 } else {
-  app.listen(port);
+  app.listen(port, '0.0.0.0');
 }
