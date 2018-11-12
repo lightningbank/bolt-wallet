@@ -79,7 +79,7 @@ class CustomNodeModal extends React.Component<Props, State> {
         type: 'primary',
         text: translate('NODE_CTA'),
         onClick: this.saveAndAdd,
-        disabled: !!Object.keys(invalids).length
+        // disabled: !!Object.keys(invalids).length
       },
       {
         type: 'default',
