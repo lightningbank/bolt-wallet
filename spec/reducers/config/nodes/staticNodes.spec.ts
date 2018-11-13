@@ -83,6 +83,13 @@ const expectedInitialState = {
     service: 'Expanse.tech',
     lib: new RPCNode('https://node.expanse.tech/'),
     estimateGas: true
+  },
+  xbo: {
+    network: 'XBO',
+    isCustom: false,
+    service: 'boltcoin.us',
+    lib: new RPCNode('http://www.boltcoin.us'),
+    estimateGas: true
   }
 };
 

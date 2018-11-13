@@ -13,7 +13,8 @@ import {
   ETC_TREZOR,
   ETH_TESTNET,
   EXP_DEFAULT,
-  UBQ_DEFAULT
+  UBQ_DEFAULT,
+  XBO_DEFAULT
 } from 'config/dpaths';
 import { ConfigAction } from 'actions/config';
 import { StaticNetworkIds, StaticNetworkConfig, BlockExplorerConfig } from 'types/network';
@@ -171,7 +172,24 @@ export const INITIAL_STATE: State = {
       max: 20,
       initial: 2
     }
-  }
+  },
+  XBO: {
+    name: 'XBO',
+    unit: 'XBO',
+    chainId: 0,
+    isCustom: false,
+    color: '#0000ff',
+    blockExplorer: makeExplorer('Ubiqscan', 'http://www.boltscan.com'),
+    tokens: require('config/tokens/xbo.json'),
+    contracts: require('config/contracts/xbo.json'),
+    dPathFormats: {
+      [SecureWalletName.TREZOR]: XBO_DEFAULT,
+      [SecureWalletName.LEDGER_NANO_S]: XBO_DEFAULT,
+      [InsecureWalletName.MNEMONIC_PHRASE]: XBO_DEFAULT
+    },
+    gasPriceSettings: gasPriceDefaults,
+    shouldEstimateGasPrice: true
+  },
 };
 
 export const staticNetworks = (state: State = INITIAL_STATE, action: ConfigAction) => {
