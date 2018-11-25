@@ -187,8 +187,11 @@ export const INITIAL_STATE: State = {
       [SecureWalletName.LEDGER_NANO_S]: XBO_DEFAULT,
       [InsecureWalletName.MNEMONIC_PHRASE]: XBO_DEFAULT
     },
-    gasPriceSettings: gasPriceDefaults,
-    shouldEstimateGasPrice: true
+    gasPriceSettings: {
+      min: 0.1,
+      max: 10,
+      initial: 1
+    }
   },
 };
 
